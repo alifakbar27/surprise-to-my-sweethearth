@@ -3,194 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy 17th Birthday Rika ❤️</title>
+  <title>Blossoming Gift 💖</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #ffe6f0, #fff);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
+      background-color: #0e0e0e;
+      overflow: hidden;
     }
 
-    .container {
-      text-align: center;
-      padding-top: 100px;
+    .night {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top, #000033, #000000);
+      z-index: -1;
+    }
+
+    .flowers {
       position: relative;
-      z-index: 2;
-      max-width: 600px;
-      margin: auto;
+      width: 100%;
+      height: 100vh;
     }
 
-    h1 {
-      font-size: 3em;
-      color: #ff4d7c;
-      animation: popIn 2s ease-out;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #555;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0); opacity: 0; }
-      60% { transform: scale(1.2); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    button {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background-color: #ff4d7c;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      margin-top: 40px;
-      transition: background 0.3s ease;
-      z-index: 10;
-    }
-
-    button:hover {
-      background-color: #e6004c;
-    }
-
-    .balloon {
-      width: 60px;
-      height: 80px;
-      background: red;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    .flower {
       position: absolute;
-      bottom: -100px;
-      animation: floatUp 10s infinite ease-in;
-      display: none;
     }
 
-    .balloon:nth-child(1) { left: 10%; background: #ff6699; animation-delay: 0s; }
-    .balloon:nth-child(2) { left: 30%; background: #66ccff; animation-delay: 2s; }
-    .balloon:nth-child(3) { left: 50%; background: #ffcc66; animation-delay: 4s; }
-    .balloon:nth-child(4) { left: 70%; background: #99ff99; animation-delay: 6s; }
-    .balloon:nth-child(5) { left: 90%; background: #cc99ff; animation-delay: 8s; }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(-100vh) rotate(360deg); }
+    .flower__leafs {
+      position: relative;
+      width: 100px;
+      height: 100px;
     }
 
-    .cake {
-      display: none;
-      margin: 30px auto;
-      width: 150px;
-      height: 150px;
-      background: url('https://i.imgur.com/0WkLkDw.png') no-repeat center;
-      background-size: contain;
-      animation: bounce 1s ease-in-out infinite alternate;
-    }
-
-    .gift {
-      display: none;
-      margin: 30px auto;
-      width: 120px;
-      height: 120px;
-      background: url('https://i.imgur.com/eVdpJqM.png') no-repeat center;
-      background-size: contain;
-      animation: popIn 1s ease-in;
-    }
-
-    .character {
+    .flower__leaf {
       position: absolute;
-      font-size: 3rem;
-      animation: moveAround 10s infinite ease-in-out;
+      width: 20px;
+      height: 20px;
+      background: yellow;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: bloom 4s ease-in-out infinite;
     }
 
-    .character:nth-child(1) { top: 20%; left: 5%; animation-delay: 0s; }
-    .character:nth-child(2) { top: 40%; left: 90%; animation-delay: 3s; }
-    .character:nth-child(3) { top: 60%; left: 10%; animation-delay: 6s; }
-
-    @keyframes moveAround {
-      0%   { transform: translate(0, 0); }
-      25%  { transform: translate(20px, -10px); }
-      50%  { transform: translate(-10px, 15px); }
-      75%  { transform: translate(10px, -10px); }
-      100% { transform: translate(0, 0); }
+    @keyframes bloom {
+      0% { transform: scale(0); opacity: 0.2; }
+      50% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0); opacity: 0.2; }
     }
 
-    @keyframes bounce {
-      from { transform: translateY(0); }
-      to { transform: translateY(-15px); }
+    .flower__line {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100px;
+      background: green;
     }
 
-    .bottom-space {
-      height: 150px;
+    .grow-ans {
+      animation: growUp 4s ease forwards;
     }
 
-    audio {
-      display: none;
+    @keyframes growUp {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
+    .flower__grass {
+      position: absolute;
+      bottom: 0;
+      width: 100px;
+      height: 50px;
+      background: green;
+      opacity: 0.6;
+    }
+
+    .flower__light {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px white;
+    }
+
+    .long-g {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .leaf {
+      width: 10px;
+      height: 10px;
+      background: limegreen;
+      border-radius: 50%;
     }
   </style>
 </head>
-<body>
+<body class="not-loaded">
+  <div class="night"></div>
+  <div class="flowers">
+    <div class="flower flower--1" style="top: 30%; left: 30%;">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+        <div class="flower__line__leaf flower__line__leaf--5"></div>
+        <div class="flower__line__leaf flower__line__leaf--6"></div>
+      </div>
+    </div>
 
-  <!-- Karakter Lucu -->
-  <div class="character">🎈</div>
-  <div class="character">🦄</div>
-  <div class="character">🎉</div>
+    <div class="flower flower--2" style="top: 50%; left: 50%;">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
 
-  <!-- Balon animasi -->
-  <div class="balloon"></div>
-  <div class="balloon"></div>
-  <div class="balloon"></div>
-  <div class="balloon"></div>
-  <div class="balloon"></div>
+    <div class="flower flower--3" style="top: 40%; left: 70%;">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
 
-  <div class="container">
-    <h1>Selamat Ulang Tahun ke-17, Rika Yulia! 🎉</h1>
-    <p>Kamu adalah orang yang ceria, lucu, dan selalu membawa semangat ke mana pun pergi. Semoga hari ini dipenuhi tawa dan kebahagiaan!</p>
-    <button onclick="showGift()">🎁 Klik untuk Surprise</button>
+    <div class="grow-ans" style="--d:1.2s">
+      <div class="flower__g-long">
+        <div class="flower__g-long__top"></div>
+        <div class="flower__g-long__bottom"></div>
+      </div>
+    </div>
 
-    <div class="cake" id="cake"></div>
-    <div class="gift" id="gift"></div>
-    <p id="message" style="display:none; font-size:1.5em; color:#e6004c;"></p>
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--1">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--2">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.4s">
+      <div class="flower__g-right flower__g-right--1">
+        <div class="leaf"></div>
+      </div>
+    </div>
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-right flower__g-right--2">
+        <div class="leaf"></div>
+      </div>
+    </div>
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-front">
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__line"></div>
+      </div>
+    </div>
   </div>
-
-  <div class="bottom-space"></div>
-
-  <!-- Musik latar (opsional) -->
-  <audio id="birthdaySong" src="https://www.soundjay.com/human/sounds/birthday-song-01.mp3"></audio>
-
-  <script>
-    function showGift() {
-      const cake = document.getElementById("cake");
-      const gift = document.getElementById("gift");
-      const message = document.getElementById("message");
-      const balloons = document.querySelectorAll(".balloon");
-      const song = document.getElementById("birthdaySong");
-
-      // Tampilkan elemen
-      cake.style.display = "block";
-      gift.style.display = "block";
-      message.style.display = "block";
-      message.textContent = "🎂 Happy Birthday Lagi ya! Semoga semua impianmu menjadi nyata! 💖";
-
-      // Mainkan musik
-      song.play();
-
-      // Tampilkan balon satu per satu
-      balloons.forEach((b, i) => {
-        setTimeout(() => {
-          b.style.display = "block";
-        }, i * 300);
-      });
-
-      // Efek tambahan
-      setTimeout(() => {
-        alert("🎉 Selamat Ulang Tahun Rika! Jangan lupa bahagia setiap hari! 💫");
-      }, 1000);
-    }
-  </script>
 </body>
 </html>
